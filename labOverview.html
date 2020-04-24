@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>
-        空间智能研究所->本所概况
-        <html lang="en">
-        <head>
+        空间智能研究所->本所概况</title>
+
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
             <meta name="description" content="">
@@ -62,8 +61,30 @@
                 .navbar > li:hover .dropdown-menu {
                     display: block;
                 }
+                li{
+                    list-style:none;
+                }
+                .box{
+                    position: relative;
+                    z-index: 999;
+                    background-color: #fff;
+                }
+                .box-active{
+                    width: 1140px;
+                    position: fixed;
+                    top: 0;
+                }
             </style>
-
+            <script>
+                window.addEventListener('scroll', function(){
+                    let t = $('body, html').scrollTop();   // 目前监听的是整个body的滚动条距离
+                    if( t > 510 ){
+                        $('.box').addClass('box-active')
+                    }else{
+                        $('.box').removeClass('box-active')
+                    }
+                })
+            </script>
         </head>
 <body>
 <!————研究所名称与图片 -->
@@ -87,38 +108,10 @@
     <div id="myNav" class="nav py-3 navbar justified-content-between">
         <li><a href="index.html" class="text-muted">网站首页</a></li>
         <li><a href="#" >本所概况</a></li>
-        <li class="dropdown">
-            <a href="scienceTeam.html" class="dropdown-toggle text-muted" >科研团队</a>
-            <ul class="dropdown-menu" role="menu">
-                <a href="#team-sense" data-toggle="tab" class="dropdown-item text-muted" >感知认知与智能决策</a>
-                <a href="#" data-toggle="tab" class="dropdown-item text-muted" >数据挖掘与知识发现</a>
-                <a href="#" data-toggle="tab" class="dropdown-item text-muted" >卫星图像与视频自动实时处理</a>
-                <a href="#" data-toggle="tab" class="dropdown-item text-muted" >机器人与自动驾驶</a>
-            </ul>
-        </li>
-        <li class="dropdown">
-            <a href="sciSearch.html" class=" dropdown-toggle text-muted" >科学研究</a>
-            <ul class="dropdown-menu" role="menu">
-                <a href="#team-sense" data-toggle="tab" class="dropdown-item text-muted" >感知认知与智能决策</a>
-                <a href="#" data-toggle="tab" class="dropdown-item text-muted" >数据挖掘与知识发现</a>
-                <a href="#" data-toggle="tab" class="dropdown-item text-muted" >卫星图像与视频自动实时处理</a>
-                <a href="#" data-toggle="tab" class="dropdown-item text-muted" >机器人与自动驾驶</a>
-            </ul>
-        </li>
+        <li><a href="scienceTeam.html" class="text-muted" >科研团队</a></li>
+        <li><a href="sciSearch.html" class="text-muted" >科研方向</a></li>
         <li><a class="text-muted " href="sciResults.html">科研成果</a></li>
-        <li class="dropdown">
-            <a href="openDataBase.html" class=" dropdown-toggle text-muted">开源平台</a>
-            <ul class="dropdown-menu" role="menu">
-                <a href="#team-sense" data-toggle="tab" class="dropdown-item text-muted" >城市点云数据库</a>
-                <a href="#" data-toggle="tab" class="dropdown-item text-muted" >国情调查数据库</a>
-                <a href="#" data-toggle="tab" class="dropdown-item text-muted" >遥感影像数据库</a>
-                <a href="#" data-toggle="tab" class="dropdown-item text-muted" >地灾数据/多源航空航天影像数据/全景影像数据库</a>
-                <a href="#" data-toggle="tab" class="dropdown-item text-muted" >视频卫星数据库</a>
-                <a href="#" data-toggle="tab" class="dropdown-item text-muted" >遥感目标检测数据库/电网数据库/沙漠数据库</a>
-                <a href="#" data-toggle="tab" class="dropdown-item text-muted" >SAR影像数据库</a>
-                <a href="#" data-toggle="tab" class="dropdown-item text-muted" >室内定位数据库</a>
-            </ul>
-        </li>
+        <li><a href="openDataBase.html" class="text-muted">开源平台</a></li>
         <li><a class=" text-muted" href="future.html">行业发展</a></li>
     </div>
 </div>
@@ -134,24 +127,24 @@
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="news/news1.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
+                <!--<div class="carousel-caption d-none d-md-block">
                     <h5>主标题</h5>
                     <p>对应的简要描述</p>
-                </div>
+                </div>-->
             </div>
             <div class="carousel-item">
                 <img src="news/news2.png" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
+               <!-- <div class="carousel-caption d-none d-md-block">
                     <h5>主标题</h5>
                     <p>对应的简要描述</p>
-                </div>
+                </div>-->
             </div>
             <div class="carousel-item">
                 <img src="news/news3.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
+             <!--   <div class="carousel-caption d-none d-md-block">
                     <h5>主标题</h5>
                     <p>主标题</p>
-                </div>
+                </div>-->
             </div>
 
         </div>
@@ -165,23 +158,56 @@
         </a>
     </div>
     <!--文字展示部分-->
-    <div class="col-md-12 py-2">
-        <h2><strong>本所概况</strong></h2>
-        <p>    为响应武汉大学关于人工智能领域的战略布局，测绘遥感信息工程国家重点实验室与遥感信息工程学院联合成立空间智能研究所。研究所面向自然资源要素监测与管理、城市空间安全评估、重大基础设施健康管理、灾害应急、自动驾驶等重大需求，依托现代测绘与遥感、人工智能、信息通信、物联网、大数据等前沿理论方法与技术，致力于探索多学科交叉融合的理论方法与技术研究，以达到精准感知、智能认知与理解复杂环境人、机、物多元要素的位置、语义与发展态势的目标。。。。。。。
-        </p>
-        <h3><strong>现有体系</strong></h3>
-        <p></p>
-        <p><strong>所长杨必胜</strong>：万人计划科技领军人才、国家杰出科学青年基金获得者、科技部中青年科技创新领军人才。</p>
-        <p><strong>研究兴趣</strong>：激光扫描测量与无人机摄影测量、点云智能处理与深度学习、地理空间智能与GIS应用。
-            空间智能将开展空间信息领域人工智能技术研究，在现有研究基础上，着重开展图像与视频自动实时处理、感知认知与智能决策、机器人与自动驾驶、数据挖掘与知识发现等方面的研究，探索空、天、地信息一体化智能处理方式，以实现PNTRC为总体目标。
-            。</p>
-        <p>组织架构图</p>
-        <img src="labOverview/prog1.png" class="rounded mx-auto d-block">
-        <p><strong>未来发展方向</strong>:空间智能将开展空间信息领域人工智能技术研究，在现有研究基础上，着重开展图像与视频自动实时处理、感知认知与智能决策、机器人与自动驾驶、数据挖掘与知识发现等方面的研究，探索空、天、地信息一体化智能处理方式，以实现PNTRC为总体目标。
-        </p>
+    <div class="container col-12 py-2">
+        <div class="container justified-content-between box">
+            <ul id="newsTabs" class="nav nav-tabs">
+                <li class="active nav-item col-md-2" ><a class="nav-link text-center active" href="#introduction" id="p1" tabindex="-01" data-toggle="tab">基本介绍</a></li>
+                <li class="nav-item col-md-2"><a class="nav-link text-center" href="#system" id="p2" tabindex="01" data-toggle="tab">现有体系</a></li>
+                <li class="nav-item col-md-2"><a class="nav-link text-center" href="#development" id="p3" tabindex="01" data-toggle="tab">未来发展</a></li>
+            </ul>
+        </div>
     </div>
-    <div class="col-md-2">
-
+    <div class="container tab-content col-12 py-2">
+        <dic class="tab-pane active" id="introduction">
+            <div class="py-3"><!--总介绍-->
+                <p style="text-indent: 2em;">为响应武汉大学关于人工智能领域的战略布局，测绘遥感信息工程国家重点实验室与遥感信息工程学院联合成立空间智能研究所。研究所面向自然资源要素监测与管理、城市空间安全评估、重大基础设施健康管理、灾害应急、自动驾驶等重大需求，依托现代测绘与遥感、人工智能、信息通信、物联网、大数据等前沿理论方法与技术，致力于探索多学科交叉融合的理论方法与技术研究，以达到精准感知、智能认知与理解复杂环境人、机、物多元要素的位置、语义与发展态势的目标。
+                </p>
+            </div>
+            <div class="py-3 row"><!--所长-->
+                    <div class="col-1"></div>
+                    <div class="media col-10"> <!--杨必胜教授-->
+                        <div class="media-left">
+                            <img src="team/杨必胜.png" width="250px" >
+                        </div>
+                        <div class="media-body px-5" >
+                            <p><strong>所长 杨必胜：</strong>万人计划科技领军人才、国家杰出科学青年基金获得者、科技部中青年科技创新领军人才。</p>
+                            <p><strong>研究兴趣</strong>：激光扫描测量与无人机摄影测量、点云智能处理与深度学习、地理空间智能与GIS应用。 空间智能将开展空间信息领域人工智能技术研究，在现有研究基础上，着重开展图像与视频自动实时处理、感知认知与智能决策、机器人与自动驾驶、数据挖掘与知识发现等方面的研究，探索空、天、地信息一体化智能处理方式，以实现PNTRC为总体目标。</p>
+                        </div>
+                    </div>
+            </div>
+            <div class="py-3">
+                <p><strong>副所长 胡翔云：</strong>教授博导。武汉大学遥感信息工程学院教授、博士生导师。 2010年从美国ERDAS Inc公司辞职回武汉大学任珞珈学者特聘教授，现任摄影测量系主任。
+                </p>
+                <p>发表SCI期刊论文20余篇，为20余种人工智能与模式识别、摄影测量与遥感国际学术期刊的审稿人。研制了被国际著名企业（微软、PCI Geomatics、 ERDAS Inc等）采用的快速特征提取技术smartdigitizer；主持研制了easyfeature 软件系统，用于遥感影像的快速特征提取和变化检测，受到了国务院地理国情普查领导小组办公室的肯定和推荐，应用于测绘地理信息、国土、减灾等行业。
+                </p>
+            </div>
+            <div class="py-3">
+                <p><strong>副所长 陈亮：</strong>教授博导。武汉大学测绘遥感信息工程国家重点实验室教授、博士生导师。 2017年回国工作前在芬兰大地测量研究所担任高级研究员，传感器与室内导航研究组副组长，芬兰激光雷达“国家优秀创新中心”科研骨干。
+                </p>
+                <p>研究兴趣：室内外无缝定位与导航、导航新信号体制理论与方法、多源融合泛在定位与空间智能认知等。长期从事“室内外无缝定位与导航”领域的研究，主要研究方向是导航新信号理论与方法、智能手机泛在定位、多源融合室内外无缝导航。
+                </p>
+            </div>
+        </dic>
+        <div class="tab-pane" id="system">
+            <img src="labOverview/prog1.png" class="rounded mx-auto d-block" >
+            <p class="text-center">组织架构图</p>
+        </div>
+        <div class="tab-pane" id="development">
+            <div class="py-3">
+            <p style="text-indent: 2em;">空间智能将开展空间信息领域人工智能技术研究，在现有研究基础上，着重开展图像与视频自动实时处理、感知认知与智能决策、机器人与自动驾驶、数据挖掘与知识发现等方面的研究，探索空、天、地信息一体化智能处理方式，以实现PNTRC为总体目标。
+            </p>
+            </div>
+        </div>
     </div>
 </div>
 
