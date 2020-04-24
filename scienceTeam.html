@@ -63,7 +63,34 @@
                     display: block;
                 }
             </style>
-
+            <script>
+                $(document).ready(function(){
+                    $("#p1").click(function(){
+                        $("#perceivedCognition").show();
+                        $("#dataMining").hide();
+                        $("#satelliteVideo").hide();
+                        $("#robotDrive").hide();
+                    });
+                    $("#p2").click(function(){
+                        $("#perceivedCognition").hide();
+                        $("#dataMining").show();
+                        $("#satelliteVideo").hide();
+                        $("#robotDrive").hide();
+                    });
+                    $("#p3").click(function(){
+                        $("#perceivedCognition").hide();
+                        $("#dataMining").hide();
+                        $("#satelliteVideo").show();
+                        $("#robotDrive").hide();
+                    });
+                    $("#p4").click(function(){
+                        $("#perceivedCognition").hide();
+                        $("#dataMining").hide();
+                        $("#satelliteVideo").hide();
+                        $("#robotDrive").show();
+                    });
+                });
+            </script>
         </head>
 <body>
 <!————研究所名称与图片 -->
@@ -88,15 +115,15 @@
 <!--导航栏 -->
 <div class="container">
     <div id="myNav" class="nav py-3 navbar justified-content-between">
-        <li><a href="homeIndex.html" class="text-muted">网站首页</a></li>
+        <li><a href="Index.html" class="text-muted">网站首页</a></li>
         <li><a href="labOverview.html" class=" text-muted">本所概况</a></li>
         <li class="dropdown active">
             <a href="#" class=" dropdown-toggle" >科研团队</a>
             <ul class="dropdown-menu" role="menu">
-                <a href="#team-sense" data-toggle="tab" class="dropdown-item text-muted" >感知认知与智能决策</a>
+                <a href="#team-sense" data-toggle="tab"  class="dropdown-item text-muted" >感知认知与智能决策</a>
                 <a href="#" data-toggle="tab" class="dropdown-item text-muted" >数据挖掘与知识发现</a>
-                <a href="#" data-toggle="tab" class="dropdown-item text-muted" >卫星图像与视频自动实时处理</a>
-                <a href="#" data-toggle="tab" class="dropdown-item text-muted" >机器人与自动驾驶</a>
+                <a href="#" data-toggle="tab"  class="dropdown-item text-muted" >卫星图像与视频处理</a>
+                <a href="#" data-toggle="tab"  class="dropdown-item text-muted" >机器人与自动驾驶</a>
             </ul>
         </li>
         <li class="dropdown">
@@ -104,20 +131,20 @@
             <ul class="dropdown-menu" role="menu">
                 <a href="#team-sense" data-toggle="tab" class="dropdown-item text-muted" >感知认知与智能决策</a>
                 <a href="#" data-toggle="tab" class="dropdown-item text-muted" >数据挖掘与知识发现</a>
-                <a href="#" data-toggle="tab" class="dropdown-item text-muted" >卫星图像与视频自动实时处理</a>
+                <a href="#" data-toggle="tab" class="dropdown-item text-muted" >卫星图像与视频处理</a>
                 <a href="#" data-toggle="tab" class="dropdown-item text-muted" >机器人与自动驾驶</a>
             </ul>
         </li>
         <li><a class="text-muted " href="sciResults.html">科研成果</a></li>
         <li class="dropdown">
-            <a href="openDataBase.html" class=" dropdown-toggle text-muted">开源数据库</a>
+            <a href="openDataBase.html" class=" dropdown-toggle text-muted">开源平台</a>
             <ul class="dropdown-menu" role="menu">
                 <a href="#team-sense" data-toggle="tab" class="dropdown-item text-muted" >城市点云数据库</a>
                 <a href="#" data-toggle="tab" class="dropdown-item text-muted" >国情调查数据库</a>
                 <a href="#" data-toggle="tab" class="dropdown-item text-muted" >遥感影像数据库</a>
-                <a href="#" data-toggle="tab" class="dropdown-item text-muted" >地灾/多元航空影像//数据库</a>
+                <a href="#" data-toggle="tab" class="dropdown-item text-muted" >地灾数据/多源航空航天影像数据/全景影像数据库</a>
                 <a href="#" data-toggle="tab" class="dropdown-item text-muted" >视频卫星数据库</a>
-                <a href="#" data-toggle="tab" class="dropdown-item text-muted" >遥感目标检测/电网/沙漠数据库</a>
+                <a href="#" data-toggle="tab" class="dropdown-item text-muted" >遥感目标检测数据库/电网数据库/沙漠数据库</a>
                 <a href="#" data-toggle="tab" class="dropdown-item text-muted" >SAR影像数据库</a>
                 <a href="#" data-toggle="tab" class="dropdown-item text-muted" >室内定位数据库</a>
             </ul>
@@ -126,9 +153,8 @@
     </div>
 </div>
 <!--标签区域-->
-<div id="navTabs" class="tab-content">
+<div class="container py-3 ">
     <!-- 网站主页-->
-    <div class="container py-3 ">
         <!-- 各团队最新研究成果轮播滚动部分-->
         <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -168,207 +194,188 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
+</div>
         <!--四个标签页及容器-->
-        <div class="container mb-2 py-2 justified-content-between">
-            <ul id="newsTabs" class="nav nav-tabs">
-                <li class="active nav-item col-md-3" ><a class="nav-link text-center active" href="#perceivedCognition" tabindex="-01" data-toggle="tab">感知认知与智能决策</a></li>
-                <li class="nav-item col-md-3"><a class="nav-link text-center" href="#dataMining" tabindex="01" data-toggle="tab">数据挖掘与知识发现</a></li>
-                <li class="nav-item col-md-3"><a class="nav-link text-center" href="#satelliteVideo" tabindex="01" data-toggle="tab">卫星图像与视频自动实时处理</a></li>
-                <li class="nav-item col-md-3"><a class="nav-link text-center" href="#robotDrive" tabindex="01" data-toggle="tab">机器人与自动驾驶</a></li>
-            </ul>
+<div class="container mb-2 py-2 justified-content-between">
+    <div class="row">
+        <div class="col-md-10">
+            <div class="container justified-content-between">
+                <ul id="newsTabs" class="nav nav-tabs">
+                    <li class="active nav-item col-md-3" ><a class="nav-link text-center active" id="p1" href="#perceivedCognitionTeam" tabindex="-01" data-toggle="tab">感知认知与智能决策</a></li>
+                    <li class="nav-item col-md-3"><a class="nav-link text-center" id="p2" href="#dataMiningTeam" tabindex="01" data-toggle="tab">数据挖掘与知识发现</a></li>
+                    <li class="nav-item col-md-3"><a class="nav-link text-center" id="p3" href="#satelliteVideoTeam" tabindex="01" data-toggle="tab">卫星图像与视频处理</a></li>
+                    <li class="nav-item col-md-3"><a class="nav-link text-center" id="p4" href="#robotDriveTeam" tabindex="01" data-toggle="tab">机器人与自动驾驶</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-2 tab-content">
+            <div class="tab-pane active" id="perceivedCognition">
+                <div class="dropdown py-1">
+                    <a href="#" id="myTabdrop1" class="text-center text-muted" data-toggle="dropdown">
+                        团队组成
+                        <ul class="dropdown-menu" role="menu">
+                            <li ><a href="#perceivedCognition-list-item-1">1教授</a></li>
+                            <li ><a href="#perceivedCognition-list-item-2"a>副教授</a></li>
+                            <li ><a href="#perceivedCognition-list-item-3">研究员</a></li>
+                            <li ><a href="#perceivedCognition-list-item-4">博士后</a></li>
+                        </ul>
+                    </a>
+                </div>
+            </div>
+            <div class="tab-pane" id="dataMining" role="menu">
+                <div class="dropdown py-1">
+                    <a href="#" id="myTabdrop2" class="text-center text-muted" data-toggle="dropdown">
+                        团队组成
+                        <ul class="dropdown-menu">
+                            <li ><a href="#dataMining-list-item-1">2教授</a></li>
+                            <li><a href="#dataMining-list-item-2">副教授</a></li>
+                            <li><a href="#dataMining-list-item-3">研究员</a></li>
+                            <li><a href="#dataMining-list-item-4">博士后</a></li>
+                        </ul>
+                    </a>
+                </div>
+            </div>
+            <div class="tab-pane" id="satelliteVideo" role="menu">
+                <div class="dropdown py-1">
+                    <a href="#" id="myTabdrop3" class="text-center text-muted" data-toggle="dropdown">
+                        团队组成
+                        <ul class="dropdown-menu">
+                            <li><a href="#satelliteVideo-list-item-1">3教授</a></li>
+                            <li><a href="#satelliteVideo-list-item-2">副教授</a></li>
+                            <li><a href="#satelliteVideo-list-item-3">研究员</a></li>
+                            <li><a href="#satelliteVideo-list-item-4">博士后</a></li>
+                        </ul>
+                    </a>
+                </div>
+            </div>
+            <div class="tab-pane" id="robotDrive" role="menu">
+                <div class="dropdown py-1">
+                    <a href="#" id="myTabdrop4" class="text-center text-muted" data-toggle="dropdown">
+                        团队组成
+                        <ul class="dropdown-menu">
+                            <li ><a href="#robotDrive-list-item-1">4教授</a></li>
+                            <li ><a href="#robotDrive-list-item-2">副教授</a></li>
+                            <li ><a href="#robotDrive-list-item-3">研究员</a></li>
+                            <li><a href="#robotDrive-list-item-4">博士后</a></li>
+                        </ul>
+                    </a>
+                </div>
+            </div>
         </div>
         <!--四个标签页的容器-->
-        <div id="everyTabContent" class="tab-content py-10">
-            <!--科研成果=>感知认知与智能决策-->
-            <div class="active tab-pane" id="perceivedCognition">
-                <div class="container-fluid">
-                    <div class="row">
-                        <nav class="col-dm-3 col-2" id="myNewsScrollspy">
-                            <div id="list-news" class="list-group">
-                                <a class="text-center list-group-item list-group-item-action"><h5><strong>团队组成</strong></h5></a>
-                                <a class="list-group-item list-group-item-action active" href="#news-list-item-1">教授</a>
-                                <a class="list-group-item list-group-item-action" href="#news-list-item-2">副教授</a>
-                                <a class="list-group-item list-group-item-action" href="#news-list-item-3">研究员</a>
-                                <a class="list-group-item list-group-item-action" href="#news-list-item-4">博士后</a>
-                            </div>
-                        </nav>
-                        <div class="col-dm-9 col-10">
-                            <div data-spy="scroll" data-target="#list-news" data-offset="0" class="scrollspy-example pre-scrollable">
-                                <a class="text-center"><h2><strong>感知认知与智能决策</strong></h2></a>
-                                <h3 id="news-list-item-1">教授</h3>
-                                <div class="media"> <!--杨必胜教授-->
-                                    <div class="media-left">
-                                        <img src="team/杨必胜.png" width="150px" height="150px">
-                                    </div>
-                                    <div class="media-body px-3" >
-                                        <h4 class="media-heading"><strong>杨必胜</strong></h4>
-                                        <p>万人计划科技领军人才、国家杰出科学青年基金获得者、科技部中青年科技创新领军人才。</p>
-                                        <p><strong>研究兴趣</strong>：激光扫描测量与无人机摄影测量、点云智能处理与深度学习、地理空间智能与GIS应用。</p>
-                                    </div>
-                                </div>
-                                <div class="divider"></div>
-                                <div class="media py-5" > <!--陈亮教授-->
-                                    <div class="media-left">
-                                        <img src="team/陈亮.png" width="150px" height="180px">
-                                    </div>
-                                    <div class="media-body px-3">
-                                        <h3><strong>陈亮</strong></h3>
-                                        <p>2017年回国工作前在芬兰大地测量研究所担任高级研究员，传感器与室内导航研究组副组长，芬兰激光雷达“国家优秀创新中心”科研骨干。</p>
-                                        <p>长期从事“室内外无缝定位与导航”领域的研究，主要研究方向是导航新信号理论与方法、智能手机泛在定位、多源融合室内外无缝导航。已发表SCI/EI论文70余篇，撰写新体制导航定位专著1本，书稿5章，申请专利5项。主持和参与了欧盟框架、芬兰科学院、科技部重大研发计划等十余个科研项目，研究成果获美国导航年会、欧洲导航年会、欧盟工业联盟委员会项目峰会等奖项。
-                                        </p>
-                                    </div>
-                                </div>
-                                <h4 id="news-list-item-2">副教授</h4>
-                                <h4 id="news-list-item-3">研究员</h4>
-                                <h4 id="news-list-item-4">博士后</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    </div>
+</div>
+<div class="container py-3 tab-content">
+    <div class="tab-pane active" id="perceivedCognitionTeam">
+        <a class="text-center"><h2><strong>感知认知与智能决策</strong></h2></a>
+        <h3 id="perceivedCognition-list-item-1">教授</h3>
+        <div class="media"> <!--杨必胜教授-->
+            <div class="media-left">
+                <img src="team/杨必胜.png" width="150px" height="150px">
             </div>
-            <!--科研成果=>数据挖掘与知识发现-->
-            <div class="tab-pane" id="dataMining">
-                <div class="container-fluid">
-                    <div class="row">
-                        <nav class="col-dm-3 col-2" id="myDataMiningScrollspy">
-                            <div id="list-DataMining" class="list-group">
-                                <a class="text-center list-group-item list-group-item-action"><h5><strong>团队组成</strong></h5></a>
-                                <a class="list-group-item list-group-item-action active" href="#DataMining-list-item-1">教授</a>
-                                <a class="list-group-item list-group-item-action" href="#DataMining-list-item-2">副教授</a>
-                                <a class="list-group-item list-group-item-action" href="#DataMining-list-item-3">研究员</a>
-                                <a class="list-group-item list-group-item-action" href="#DataMining-list-item-4">博士后</a>
-                            </div>
-                        </nav>
-                        <div class="col-dm-9 col-10">
-                            <div data-spy="scroll" data-target="#list-DataMining" data-offset="0" class="scrollspy-example pre-scrollable">
-                                <a class="text-center"><h2><strong>数据挖掘与知识发现</strong></h2></a>
-                                <h3 id="DataMining-list-item-1">教授</h3>
-                                <div class="media"> <!--杨必胜教授-->
-                                    <div class="media-left">
-                                        <img src="team/杨必胜.png" width="150px" height="150px">
-                                    </div>
-                                    <div class="media-body px-3" >
-                                        <h4 class="media-heading"><strong>杨必胜</strong></h4>
-                                        <p>万人计划科技领军人才、国家杰出科学青年基金获得者、科技部中青年科技创新领军人才。</p>
-                                        <p><strong>研究兴趣</strong>：激光扫描测量与无人机摄影测量、点云智能处理与深度学习、地理空间智能与GIS应用。</p>
-                                    </div>
-                                </div>
-                                <div class="divider"></div>
-                                <div class="media py-5" > <!--陈亮教授-->
-                                    <div class="media-left">
-                                        <img src="team/陈亮.png" width="150px" height="180px">
-                                    </div>
-                                    <div class="media-body px-3">
-                                        <h3><strong>陈亮</strong></h3>
-                                        <p>2017年回国工作前在芬兰大地测量研究所担任高级研究员，传感器与室内导航研究组副组长，芬兰激光雷达“国家优秀创新中心”科研骨干。</p>
-                                        <p>长期从事“室内外无缝定位与导航”领域的研究，主要研究方向是导航新信号理论与方法、智能手机泛在定位、多源融合室内外无缝导航。已发表SCI/EI论文70余篇，撰写新体制导航定位专著1本，书稿5章，申请专利5项。主持和参与了欧盟框架、芬兰科学院、科技部重大研发计划等十余个科研项目，研究成果获美国导航年会、欧洲导航年会、欧盟工业联盟委员会项目峰会等奖项。
-                                        </p>
-                                    </div>
-                                </div>
-                                <h3 id="DataMining-list-item-2">副教授</h3>
-                                <h3 id="DataMining-list-item-3">讲师</h3>
-                                <h3 id="DataMining-list-item-4">博士后</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--科研成果=>卫星图像与视频自动实时处理-->
-            <div class="tab-pane" id="satelliteVideo">
-                <div class="container-fluid">
-                    <div class="row">
-                        <nav class="col-dm-3 col-2" id="mySatelliteVideoScrollspy">
-                            <div id="list-SatelliteVideo" class="list-group">
-                                <a class="text-center list-group-item list-group-item-action"><h5><strong>团队组成</strong></h5></a>
-                                <a class="list-group-item list-group-item-action active" href="#SatelliteVideo-list-item-1">教授</a>
-                                <a class="list-group-item list-group-item-action" href="#SatelliteVideo-list-item-2">副教授</a>
-                                <a class="list-group-item list-group-item-action" href="#SatelliteVideo-list-item-3">研究员</a>
-                                <a class="list-group-item list-group-item-action" href="#SatelliteVideo-list-item-4">博士后</a>
-                            </div>
-                        </nav>
-                        <div class="col-dm-9 col-10">
-                            <div data-spy="scroll" data-target="#list-SatelliteVideo" data-offset="0" class="scrollspy-example pre-scrollable">
-                                <a class="text-center"><h2><strong>卫星图像与视频自动实时处理</strong></h2></a>
-                                <h3 id="SatelliteVideo-list-item-1">教授</h3>
-                                <div class="media"> <!--杨必胜教授-->
-                                    <div class="media-left">
-                                        <img src="team/杨必胜.png" width="150px" height="150px">
-                                    </div>
-                                    <div class="media-body px-3" >
-                                        <h4 class="media-heading"><strong>杨必胜</strong></h4>
-                                        <p>万人计划科技领军人才、国家杰出科学青年基金获得者、科技部中青年科技创新领军人才。</p>
-                                        <p><strong>研究兴趣</strong>：激光扫描测量与无人机摄影测量、点云智能处理与深度学习、地理空间智能与GIS应用。</p>
-                                    </div>
-                                </div>
-                                <div class="divider"></div>
-                                <div class="media py-5" > <!--陈亮教授-->
-                                    <div class="media-left">
-                                        <img src="team/陈亮.png" width="150px" height="180px">
-                                    </div>
-                                    <div class="media-body px-3">
-                                        <h3><strong>陈亮</strong></h3>
-                                        <p>2017年回国工作前在芬兰大地测量研究所担任高级研究员，传感器与室内导航研究组副组长，芬兰激光雷达“国家优秀创新中心”科研骨干。</p>
-                                        <p>长期从事“室内外无缝定位与导航”领域的研究，主要研究方向是导航新信号理论与方法、智能手机泛在定位、多源融合室内外无缝导航。已发表SCI/EI论文70余篇，撰写新体制导航定位专著1本，书稿5章，申请专利5项。主持和参与了欧盟框架、芬兰科学院、科技部重大研发计划等十余个科研项目，研究成果获美国导航年会、欧洲导航年会、欧盟工业联盟委员会项目峰会等奖项。
-                                        </p>
-                                    </div>
-                                </div>
-                                <h3 id="SatelliteVideo-list-item-2">副教授</h3>
-                                <h4 id="SatelliteVideo-list-item-3">讲师</h4>
-                                <h4 id="SatelliteVideo-list-item-4">博士后</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--科研成果=>机器人与自动驾驶-->
-            <div class="tab-pane" id="robotDrive">
-                <div class="container-fluid">
-                    <div class="row">
-                        <nav class="col-dm-3 col-2" id="myRobotDriveScrollspy">
-                            <div id="list-RobotDrive" class="list-group">
-                                <a class="text-center list-group-item list-group-item-action"><h5><strong>团队组成</strong></h5></a>
-                                <a class="list-group-item list-group-item-action active" href="#RobotDrive-list-item-1">教授</a>
-                                <a class="list-group-item list-group-item-action" href="#RobotDrive-list-item-2">副教授</a>
-                                <a class="list-group-item list-group-item-action" href="#RobotDrive-list-item-3">研究员</a>
-                                <a class="list-group-item list-group-item-action" href="#RobotDrive-list-item-4">博士后</a>
-                            </div>
-                        </nav>
-                        <div class="col-dm-9 col-10">
-                            <div data-spy="scroll" data-target="#list-RobotDrive" data-offset="0" class="scrollspy-example pre-scrollable">
-                                <a class="text-center"><h2><strong>机器人与自动驾驶</strong></h2></a>
-                                <h3 id="RobotDrive-list-item-1">教授</h3>
-                                <div class="media"> <!--杨必胜教授-->
-                                    <div class="media-left">
-                                        <img src="team/杨必胜.png" width="150px" height="150px">
-                                    </div>
-                                    <div class="media-body px-3" >
-                                        <h4 class="media-heading"><strong>杨必胜</strong></h4>
-                                        <p>万人计划科技领军人才、国家杰出科学青年基金获得者、科技部中青年科技创新领军人才。</p>
-                                        <p><strong>研究兴趣</strong>：激光扫描测量与无人机摄影测量、点云智能处理与深度学习、地理空间智能与GIS应用。</p>
-                                    </div>
-                                </div>
-                                <div class="divider"></div>
-                                <div class="media py-5" > <!--陈亮教授-->
-                                    <div class="media-left">
-                                        <img src="team/陈亮.png" width="150px" height="180px">
-                                    </div>
-                                    <div class="media-body px-3">
-                                        <h3><strong>陈亮</strong></h3>
-                                        <p>2017年回国工作前在芬兰大地测量研究所担任高级研究员，传感器与室内导航研究组副组长，芬兰激光雷达“国家优秀创新中心”科研骨干。</p>
-                                        <p>长期从事“室内外无缝定位与导航”领域的研究，主要研究方向是导航新信号理论与方法、智能手机泛在定位、多源融合室内外无缝导航。已发表SCI/EI论文70余篇，撰写新体制导航定位专著1本，书稿5章，申请专利5项。主持和参与了欧盟框架、芬兰科学院、科技部重大研发计划等十余个科研项目，研究成果获美国导航年会、欧洲导航年会、欧盟工业联盟委员会项目峰会等奖项。
-                                        </p>
-                                    </div>
-                                </div>
-                                <h4 id="RobotDrive-list-item-2">副教授</h4>
-                                <h4 id="RobotDrive-list-item-3">讲师</h4>
-                                <h4 id="RobotDrive-list-item-4">博士后</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="media-body px-3" >
+                <h4 class="media-heading"><strong>杨必胜</strong></h4>
+                <p>万人计划科技领军人才、国家杰出科学青年基金获得者、科技部中青年科技创新领军人才。</p>
+                <p><strong>研究兴趣</strong>：激光扫描测量与无人机摄影测量、点云智能处理与深度学习、地理空间智能与GIS应用。</p>
             </div>
         </div>
-        <div>
+        <div class="divider"></div>
+        <div class="media py-5" > <!--陈亮教授-->
+            <div class="media-left">
+                <img src="team/陈亮.png" width="150px" height="180px">
+            </div>
+            <div class="media-body px-3">
+                <h3><strong>陈亮</strong></h3>
+                <p>2017年回国工作前在芬兰大地测量研究所担任高级研究员，传感器与室内导航研究组副组长，芬兰激光雷达“国家优秀创新中心”科研骨干。</p>
+                <p>长期从事“室内外无缝定位与导航”领域的研究，主要研究方向是导航新信号理论与方法、智能手机泛在定位、多源融合室内外无缝导航。已发表SCI/EI论文70余篇，撰写新体制导航定位专著1本，书稿5章，申请专利5项。主持和参与了欧盟框架、芬兰科学院、科技部重大研发计划等十余个科研项目，研究成果获美国导航年会、欧洲导航年会、欧盟工业联盟委员会项目峰会等奖项。
+                </p>
+            </div>
+        </div>
+        <h3 id="perceivedCognition-list-item-2">副教授</h3>
+        <h3 id="perceivedCognition-list-item-3">讲师</h3>
+        <h3 id="perceivedCognition-list-item-4">博士后</h3>
+    </div>
+    <div class="tab-pane" id="dataMiningTeam">
+        <a class="text-center"><h2><strong>数据挖掘与知识发现</strong></h2></a>
+        <h3 id="dataMining-list-item-1">教授</h3>
+        <div class="media"> <!--杨必胜教授-->
+            <div class="media-left">
+                <img src="team/杨必胜.png" width="150px" height="150px">
+            </div>
+            <div class="media-body px-3" >
+                <h4 class="media-heading"><strong>杨必胜</strong></h4>
+                <p>万人计划科技领军人才、国家杰出科学青年基金获得者、科技部中青年科技创新领军人才。</p>
+                <p><strong>研究兴趣</strong>：激光扫描测量与无人机摄影测量、点云智能处理与深度学习、地理空间智能与GIS应用。</p>
+            </div>
+        </div>
+        <div class="divider"></div>
+        <div class="media py-5" > <!--陈亮教授-->
+            <div class="media-left">
+                <img src="team/陈亮.png" width="150px" height="180px">
+            </div>
+            <div class="media-body px-3">
+                <h3><strong>陈亮</strong></h3>
+                <p>2017年回国工作前在芬兰大地测量研究所担任高级研究员，传感器与室内导航研究组副组长，芬兰激光雷达“国家优秀创新中心”科研骨干。</p>
+                <p>长期从事“室内外无缝定位与导航”领域的研究，主要研究方向是导航新信号理论与方法、智能手机泛在定位、多源融合室内外无缝导航。已发表SCI/EI论文70余篇，撰写新体制导航定位专著1本，书稿5章，申请专利5项。主持和参与了欧盟框架、芬兰科学院、科技部重大研发计划等十余个科研项目，研究成果获美国导航年会、欧洲导航年会、欧盟工业联盟委员会项目峰会等奖项。
+                </p>
+            </div>
+        </div>
+        <h3 id="dataMining-list-item-2">副教授</h3>
+        <h4 id="dataMining-list-item-3">讲师</h4>
+        <h4 id="dataMining-list-item-4">博士后</h4>
+    </div>
+    <div class="tab-pane" id="satelliteVideoTeam">
+        <a class="text-center"><h2><strong>卫星图像与视频处理</strong></h2></a>
+        <h3 id="SatelliteVideo-list-item-1">教授</h3>
+        <div class="media"> <!--杨必胜教授-->
+            <div class="media-left">
+                <img src="team/杨必胜.png" width="150px" height="150px">
+            </div>
+            <div class="media-body px-3" >
+                <h4 class="media-heading"><strong>杨必胜</strong></h4>
+                <p>万人计划科技领军人才、国家杰出科学青年基金获得者、科技部中青年科技创新领军人才。</p>
+                <p><strong>研究兴趣</strong>：激光扫描测量与无人机摄影测量、点云智能处理与深度学习、地理空间智能与GIS应用。</p>
+            </div>
+        </div>
+        <div class="media py-5" > <!--陈亮教授-->
+            <div class="media-left">
+                <img src="team/陈亮.png" width="150px" height="180px">
+            </div>
+            <div class="media-body px-3">
+                <h3><strong>陈亮</strong></h3>
+                <p>2017年回国工作前在芬兰大地测量研究所担任高级研究员，传感器与室内导航研究组副组长，芬兰激光雷达“国家优秀创新中心”科研骨干。</p>
+                <p>长期从事“室内外无缝定位与导航”领域的研究，主要研究方向是导航新信号理论与方法、智能手机泛在定位、多源融合室内外无缝导航。已发表SCI/EI论文70余篇，撰写新体制导航定位专著1本，书稿5章，申请专利5项。主持和参与了欧盟框架、芬兰科学院、科技部重大研发计划等十余个科研项目，研究成果获美国导航年会、欧洲导航年会、欧盟工业联盟委员会项目峰会等奖项。
+                </p>
+            </div>
+        </div>
+        <h3 id="SatelliteVideo-list-item-2">副教授</h3>
+        <h4 id="SatelliteVideo-list-item-3">讲师</h4>
+        <h4 id="SatelliteVideo-list-item-4">博士后</h4>
+    </div>
+    <div class="tab-pane" id="robotDriveTeam">
+        <a class="text-center"><h2><strong>机器人与自动驾驶</strong></h2></a>
+        <h3 id="RobotDrive-list-item-1">教授</h3>
+        <div class="media"> <!--杨必胜教授-->
+            <div class="media-left">
+                <img src="team/杨必胜.png" width="150px" height="150px">
+            </div>
+            <div class="media-body px-3" >
+                <h4 class="media-heading"><strong>杨必胜</strong></h4>
+                <p>万人计划科技领军人才、国家杰出科学青年基金获得者、科技部中青年科技创新领军人才。</p>
+                <p><strong>研究兴趣</strong>：激光扫描测量与无人机摄影测量、点云智能处理与深度学习、地理空间智能与GIS应用。</p>
+            </div>
+        </div>
+
+        <div class="media py-5" > <!--陈亮教授-->
+            <div class="media-left">
+                <img src="team/陈亮.png" width="150px" height="180px">
+            </div>
+            <div class="media-body px-3">
+                <h3><strong>陈亮</strong></h3>
+                <p>2017年回国工作前在芬兰大地测量研究所担任高级研究员，传感器与室内导航研究组副组长，芬兰激光雷达“国家优秀创新中心”科研骨干。</p>
+                <p>长期从事“室内外无缝定位与导航”领域的研究，主要研究方向是导航新信号理论与方法、智能手机泛在定位、多源融合室内外无缝导航。已发表SCI/EI论文70余篇，撰写新体制导航定位专著1本，书稿5章，申请专利5项。主持和参与了欧盟框架、芬兰科学院、科技部重大研发计划等十余个科研项目，研究成果获美国导航年会、欧洲导航年会、欧盟工业联盟委员会项目峰会等奖项。
+                </p>
+            </div>
         </div>
     </div>
 </div>
@@ -492,6 +499,7 @@
 <script src="jquery.min.js"></script>
 <script src="bootstrap.min.js"></script>
 
+        </div>
 </body>
 </html>
 </title>
