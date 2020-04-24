@@ -62,6 +62,9 @@
                 .navbar > li:hover .dropdown-menu {
                     display: block;
                 }
+                li{
+                    list-style:none;
+                }
                 .box{
                     position: relative;
                     z-index: 999;
@@ -103,7 +106,7 @@
                 // 监听页面滚动
                 window.addEventListener('scroll', function(){
                     let t = $('body, html').scrollTop();   // 目前监听的是整个body的滚动条距离
-                    if( t > 500 ){
+                    if( t > 510 ){
                         $('.box').addClass('box-active')
                     }else{
                         $('.box').removeClass('box-active')
@@ -212,8 +215,8 @@
         </div>
 </div>
 <!--四个研究方向以及档案馆-->
-<div class="container py-3 box">
-    <div class="row">
+<div class="container py-3 ">
+    <div class="row box">
         <div class="col-md-10">
             <div class="container justified-content-between" >
                 <ul id="newsTabs" class="nav nav-tabs " >
@@ -390,6 +393,7 @@
         <h4 id="robotDriveFOUR">2020年3-4月</h4>
     </div>
 </div>
+
 <!--<main role="main" class="container">-->
 <!--    <div class="row">-->
 <!--        <div class="col-md-8 blog-main">-->

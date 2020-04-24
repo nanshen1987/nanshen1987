@@ -73,6 +73,19 @@
                 div.col-8 div {
                     height: 200px;
                 }
+                li{
+                    list-style:none;
+                }
+                .box{
+                    position: relative;
+                    z-index: 999;
+                    background-color: #fff;
+                }
+                .box-active{
+                    width: 1140px;
+                    position: fixed;
+                    top: 0;
+                }
             </style>
         </head>
 <body data-spy="scroll" data-target="#myScrollspy" data-offset="1">
@@ -93,6 +106,15 @@
             $("#achievement1").hide();
             $("#announcement1").show();
         });
+        // 监听页面滚动
+        window.addEventListener('scroll', function(){
+            let t = $('body, html').scrollTop();   // 目前监听的是整个body的滚动条距离
+            if( t > 510 ){
+                $('.box').addClass('box-active')
+            }else{
+                $('.box').removeClass('box-active')
+            }
+        })
     });
 </script>
 <!--研究所名称与图片 -->
@@ -196,7 +218,7 @@
 </div>
 <!--三个标签页及容器-->
 <div class="container mb-2 py-2 justified-content-between">
-    <div class="row">
+    <div class="row box">
         <div class="col-md-10">
             <div class="container justified-content-between">
                 <ul id="newsTabs" class="nav nav-tabs">
@@ -206,7 +228,7 @@
                 </ul>
             </div>
         </div>
-        <div class="col-md-2 tab-content">
+        <div class="col-md-1 tab-content">
             <div class="tab-pane active" id="news">
                 <div class=" dropdown py-1" >
                     <a href="#" id="myTabdrop1" class="text-muted text-center" data-toggle="dropdown">

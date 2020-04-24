@@ -62,8 +62,31 @@
                 .navbar > li:hover .dropdown-menu {
                     display: block;
                 }
+                li{
+                    list-style:none;
+                }
+                .box{
+                    position: relative;
+                    z-index: 999;
+                    background-color: #fff;
+                }
+                .box-active{
+                    width: 1140px;
+                    position: fixed;
+                    top: 0;
+                }
             </style>
-
+            <script>
+                // 监听页面滚动
+                window.addEventListener('scroll', function(){
+                    let t = $('body, html').scrollTop();   // 目前监听的是整个body的滚动条距离
+                    if( t > 510 ){
+                        $('.box').addClass('box-active')
+                    }else{
+                        $('.box').removeClass('box-active')
+                    }
+                })
+            </script>
         </head>
 <body>
 <!————研究所名称与图片 -->
@@ -168,7 +191,7 @@
     </div>
     <!--四个标签页及容器-->
     <div class="container mb-2 py-2 justified-content-between">
-        <ul id="newsTabs" class="nav nav-tabs">
+        <ul id="newsTabs" class="nav nav-tabs box">
             <li class="active nav-item col-md-3" ><a class="nav-link text-center active" href="#perceivedCognition" tabindex="-01" >感知认知与智能决策</a></li>
             <li class="nav-item col-md-3"><a class="nav-link text-center" href="#dataMining" tabindex="01" >数据挖掘与知识发现</a></li>
             <li class="nav-item col-md-3"><a class="nav-link text-center" href="#satelliteVideo" tabindex="01" >卫星图像与视频处理</a></li>
